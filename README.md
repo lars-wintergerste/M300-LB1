@@ -3,7 +3,7 @@ Vagrantfile for an automatically setup (DHCP Server)
 
 ***VM Konfiguration***
 
-Zu Beginn habe ich die Multi VM Umgebung aufgebaut. Das File und der Code befindet sich <a href="https://github.com/mc-b/devops/tree/master/vagrant">Hier</a>.
+Zu Beginn habe ich die Multi VM Umgebung aufgebaut und habe mit verschiedenen Vagrantfiles Server aufgesetzt. Um die Files herunterladen zu können: <a href="https://github.com/mc-b/devops/tree/master/vagrant">Hier</a>.
 
 Für die VM auf der wir den DHCP Server installieren wollen, haben wir uns für Debian entschieden.
 
@@ -12,7 +12,7 @@ Hier die ersten Zeilen des Vagrantfiles in dem die Grundeinstellung der VM defin
 * IP: 192.168.50.4
 * Hostname: dhcp
 * RAM: 1024 MB
-* VM Box: Debian
+* VM Box: Debian <a href="https://app.vagrantup.com/debian/boxes/jessie64">Vagrant Box</a>
 
 Bei Provider kann auch ausgewählt werden, mit welchem Tool man die VM aufsetzten möchte. In diesem Fall ist es Virtual Box.
 
@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
 vb.memory = "1024"			
 ```
 
-Um den DHCP Server zu installieren muss man zuerst das Paketverzeichnis aktualisieren. Im nächsten Schritt wird der DHCP Server installiert. Das Paket lautet: ISC-DHCP-SERVER.
+Um den DHCP Server zu installieren muss man zuerst das Paketverzeichnis aktualisieren. Im nächsten Schritt wird dann der DHCP Server installiert. Das Paket lautet: ISC-DHCP-SERVER.
 ```
 sudo apt-get update
 sudo apt-get -y install isc-dhcp-server
@@ -34,7 +34,7 @@ sudo apt-get -y install isc-dhcp-server
 
 ***DHCP Konfiguration***
 
-Das Konfigurationfile vom DHCP Server befindet sich im Pfad /etc/dhcp/dhcpd.conf. Im Konfigurationfile wird folgendes geändert:
+Das Vagrantfile im welchen sich die Konfigurationen des DHCP Servers befinden ist im Pfad /etc/dhcp/dhcpd.conf gespeichert. Im Konfigurationfile wird folgendes geändert:
 * Domainname
 * DNS
 * DHCP Scope
