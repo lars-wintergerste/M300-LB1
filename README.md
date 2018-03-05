@@ -7,7 +7,10 @@ Für die VM auf der wir den DHCP Server installieren wollen, haben wir uns für 
 ```
 sudo apt-get update
 ```
-2. Soblad das Update durchgelaufen ist, wird dann auch schon der DHCP Server installiert. Dafür braucht man den Befehl: "sudo apt-get -y install isc-dhcp-server"
+2. Soblad das Update durchgelaufen ist, wird dann auch schon der DHCP Server installiert.
+```
+sudo apt-get -y install isc-dhcp-server
+```
 
 Sobald der Server aufgesetzt ist, werden die Kofigurationen aus dem Vagrantfile umgesetzt.
 
