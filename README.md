@@ -2,7 +2,8 @@
 Vagrantfile for an automatically setup (DHCP Server)
 
 Um die VM zu starten, muss man übers Terminal in den ensprechenden Ordner wechseln und diese dann mit Vagrant up starten.
-![alt text](vagrant%up.png)
+
+![](vagrant-up.png)
 
 ***VM Konfiguration***
 
