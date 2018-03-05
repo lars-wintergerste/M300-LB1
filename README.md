@@ -1,6 +1,9 @@
 # M300-LB1 Vagrant File (DHCP Server)
 Vagrantfile for an automatically setup (DHCP Server)
 
+Um die VM zu starten, muss man übers Terminal in den ensprechenden Ordner wechseln und diese dann mit Vagrant up starten.
+
+
 ***VM Konfiguration***
 
 Zu Beginn habe ich die Multi VM Umgebung aufgebaut und habe mit verschiedenen Vagrantfiles Server aufgesetzt. Um die Files herunterladen zu können: <a href="https://github.com/mc-b/devops/tree/master/vagrant">Hier</a>.
