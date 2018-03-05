@@ -1,7 +1,7 @@
 # M300-LB1 Vagrant File (DHCP Server)
-=======================================
 Vagrantfile for an automatically setup (DHCP Server)
 
+***VM Konfiguration***
 
 Zu Beginn habe ich die Multi VM Umgebung aufgebaut. Das File und der Code befindet sich <a href="https://github.com/mc-b/devops/tree/master/vagrant">Hier</a>.
 
@@ -18,11 +18,13 @@ Vagrant.configure(2) do |config|
 vb.memory = "1024"			--> Arbeitsspeicher Begrenzung
 ```
 
-Als erstes wird das Paketverzeichnis aktualisiert. Im nächsten Schritt wird der DHCP Server installiert. Das Paket lautet: ISC-DHCP-SERVER.
+Um den DHCP Server zu installieren muss man zuerst das Paketverzeichnis aktualisieren. Im nächsten Schritt wird der DHCP Server installiert. Das Paket lautet: ISC-DHCP-SERVER.
 ```
 sudo apt-get update
 sudo apt-get -y install isc-dhcp-server
 ```
+
+***DHCP Konfiguration****
 
 Das Konfigurationfile vom DHCP Server befindet sich im Pfad /etc/dhcp/dhcpd.conf. Im Konfigurationfile wird folgendes geändert:
 * Domainname
