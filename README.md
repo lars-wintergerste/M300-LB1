@@ -8,14 +8,22 @@ Zu Beginn habe ich die Multi VM Umgebung aufgebaut. Das File und der Code befind
 Für die VM auf der wir den DHCP Server installieren wollen, haben wir uns für Debian entschieden.
 
 Hier die ersten Zeilen des Vagrantfiles in dem die Grundeinstellung der VM definiert werden können.
+
+* IP: 192.168.50.4
+* Hostname: dhcp
+* RAM: 1024 MB
+* VM Box: Debian
+
+Bei Provider kann auch ausgewählt werden, mit welchem Tool man die VM aufsetzten möchte. In diesem Fall ist es Virtual Box.
+
 ```
 Vagrant.configure(2) do |config|  
   config.vm.define "dhcp" do |dhcp|	
-    dhcp.vm.box = "debian/jessie64" 	--> Hier haben wir uns für Linux Debian entschieden
-    dhcp.vm.hostname = "dhcp"		--> Name der VM: In diesem Fall "dhcp"
-    dhcp.vm.network "private_network", ip:"192.168.50.4" 	--> IP Adresse des DHCP Servers
-	dhcp.vm.provider "virtualbox" do |vb|			--> Welches Tool soll verwendet werden: virtualbox
-vb.memory = "1024"			--> Arbeitsspeicher Begrenzung
+    dhcp.vm.box = "debian/jessie64" 	
+    dhcp.vm.hostname = "dhcp"		
+    dhcp.vm.network "private_network", ip:"192.168.50.4" 	
+	dhcp.vm.provider "virtualbox" do |vb|			
+vb.memory = "1024"			
 ```
 
 Um den DHCP Server zu installieren muss man zuerst das Paketverzeichnis aktualisieren. Im nächsten Schritt wird der DHCP Server installiert. Das Paket lautet: ISC-DHCP-SERVER.
@@ -24,7 +32,7 @@ sudo apt-get update
 sudo apt-get -y install isc-dhcp-server
 ```
 
-***DHCP Konfiguration****
+***DHCP Konfiguration***
 
 Das Konfigurationfile vom DHCP Server befindet sich im Pfad /etc/dhcp/dhcpd.conf. Im Konfigurationfile wird folgendes geändert:
 * Domainname
