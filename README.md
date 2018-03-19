@@ -74,3 +74,13 @@ Am ende wird noch das Tastaturlayout auf Deutsch Schweiz gestellt.
 ```
 sudo sed -i 's/XKBLAYOUT="us"/XKBLAYOUT="ch"/g' /etc/default/locale
 ```
+
+***Firewall Konfiguration***
+
+Firewall installieren / konfigurieren In diesem Schritt wird die Firewall konfiguriert damit nurnoch bestimmte IP-Adressen via ssh auf den Server zugreifen können.
+
+```
+sudo apt-get install ufw -y
+sudo ufw allow from 10.0.2.2 to any port 22
+sudo ufw --force enable
+```
